@@ -16,4 +16,13 @@
         android:layout_gravity="center"
         android:text="This is Fragment2"/>
 
+    <com.example.administrator.view.FlowLayout
+        android:id="@+id/id_flow"
+        android:background="#E5E5F5"
+        android:padding="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </com.example.administrator.view.FlowLayout>
+
 </LinearLayout>
