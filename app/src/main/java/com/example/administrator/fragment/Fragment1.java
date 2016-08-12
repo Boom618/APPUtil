@@ -1,5 +1,6 @@
 package com.example.administrator.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
@@ -12,9 +13,13 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
+import com.bigkoo.pickerview.TimePickerView;
+import com.example.administrator.activity.FileLoadActivity;
 import com.example.administrator.apputils.R;
+import com.example.administrator.view.TimeView;
 
 /**
  * Created by Administrator on 2016/8/8 0008.
@@ -24,7 +29,8 @@ public class Fragment1 extends Fragment implements NavigationView.OnNavigationIt
 
     private TextView textView;
     private DrawerLayout drawer;
-   // private TimeView mTimeView;  //时间控件
+    private Button but_load;
+    private TimeView mTimeView;
 
     @Nullable
     @Override
@@ -42,18 +48,36 @@ public class Fragment1 extends Fragment implements NavigationView.OnNavigationIt
         navigationView.setNavigationItemSelectedListener(this);
 
         initView(view);
+
         return view;
     }
 
     private void initView(View view){
         textView = (TextView) view.findViewById(R.id.id_time);
+        but_load = (Button) view.findViewById(R.id.btu_load);
+
+        mTimeView = new TimeView();
+
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                mTimeView = new TimeView();
-//                mTimeView.showControlTime(getContext(),textView,false,100,"YMD", TimePickerView.Type.YEAR_MONTH_DAY);
+                mTimeView.showControlTime(getContext(),textView,false,100,"YMD", TimePickerView.Type.YEAR_MONTH_DAY);
             }
         });
+
+
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+//        but_load.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(getActivity(), FileLoadActivity.class);
+//                startActivity(intent);
+//            }
+//        });
     }
 
     @Override
@@ -78,4 +102,6 @@ public class Fragment1 extends Fragment implements NavigationView.OnNavigationIt
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
 }

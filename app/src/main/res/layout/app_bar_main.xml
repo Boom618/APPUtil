@@ -26,6 +26,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:layout_marginTop="120dp">
 
         <TextView
@@ -34,5 +35,15 @@
             android:layout_height="wrap_content"
             android:text="时间控件"/>
 
+        <Button
+            android:id="@+id/but_go_file"
+            android:textSize="@dimen/px50"
+            android:text="去下载文件"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
     </LinearLayout>
+
+
 </android.support.design.widget.CoordinatorLayout>

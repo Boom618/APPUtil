@@ -6,6 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.administrator.apputils"
+        multiDexEnabled true
         minSdkVersion 15
         targetSdkVersion 23
         versionCode 1
@@ -22,7 +23,19 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.0.0'
+    compile 'com.android.support:appcompat-v7:23.3.0'
     compile 'com.android.support:support-v4:23.0.0'
     compile 'com.android.support:design:23.3.0'
+
+    // Rx
+    compile 'io.reactivex:rxandroid:1.2.1'
+    compile 'com.squareup.retrofit2:retrofit-adapters:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+
+
+    // 日历控件
+    compile 'com.bigkoo:pickerview:2.1.0'
+    // 注册确认Dialog控件
+//    compile 'cn.pedant.sweetalert:library:1.3'
 }
